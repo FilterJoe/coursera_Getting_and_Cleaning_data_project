@@ -76,6 +76,10 @@ averages <- aggregate(. ~ activity + subject, data = data, FUN = "mean")
 
 # write data set to text file
 
+write.table(averages, file="averages.txt", row.name=FALSE)
+
+# test to make sure I wrote to file correctly:
+# test1 <- data <- read.table("averages.txt", header = TRUE)
 
 
 

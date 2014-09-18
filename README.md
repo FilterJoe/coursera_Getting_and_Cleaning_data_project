@@ -1,10 +1,10 @@
 # Project: Preparing a Tidy Data Set
-Coursera data science course: Getting and Cleaning Data (Leek, Peng, Caffo)
-Data Analyst: Joe Golton
-Date: 9/19/14
+* Coursera data science course: Getting and Cleaning Data (Leek, Peng, Caffo)
+* Data Analyst: Joe Golton
+* Date: 9/19/14
 
 ## Introduction
-The purpose of this project is to demonstrate collecting, working with, cleaning a data set.
+The purpose of this project is to demonstrate collecting, working with, and cleaning a data set.
 The goal is to prepare tidy data that can be easily used for later analysis.
 
 Data Set used: Human Activity Recognition Using Smartphones Dataset, Version 1.0 [1]
@@ -43,11 +43,15 @@ This is done in several sub steps, some of which required making some decisions 
 * The inserted 2 columns were named were subject and activity, as column 1 was the subject, and column 2 is the activity performed by the subject.
 
 ### 5) From resulting data set, create a second, independent tidy data set with the average of each variable for each activity and each subject
+* After doing this with aggregate(), the results were checked. The code for doing this is commented out.
+* This new table is saved to averages.txt
+* To test that this file was written correctly, it can be read with: test1 <- data <- read.table("averages.txt", header = TRUE)
+* This test was done but is commented out in the code.
 
 ## Files:
 * README.md
 * Codebook.md
-* run_analysis.R
+* run_analysis.R  (input files: see original source files below, output file: averages.txt)
 * Original source files: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip [1]
 
 
