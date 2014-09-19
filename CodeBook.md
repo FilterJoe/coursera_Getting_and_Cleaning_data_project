@@ -3,17 +3,17 @@
 Raw data came from: Human Activity Recognition Using Smartphones Dataset, Version 1.0 [1]
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-This data was spread across 6 files. They were combined into one, more readable file, as follows:
+This data was spread across 6 files. They were combined into one, more readable file and filtered for means and stds, as follows:
 * Data was originally in 3 files for training data, 3 files for testing data. Each group of 3 files consisted of subject, activity labels, and data
 * The training and testing files were merged, reducing the number of files from 6 to 3
-* The 3 remaining files were merged such that subject is column 1, activity labels column 2, and data is column 3
+* The 3 remaining files were merged such that subject is column 1, activity labels column 2, and data is column 3 through 563
 * The resulting 563 column dataframe was reduced to 81 columns by selecting only columns with "mean" or "std"
 * The activities values had digit codes replaced with the activity label to make to make for easier reading
-* Columns names were assigned with "subject" for column 1, "activity" for column 2, and features from the features.txt file assigned to corresponding columns
+* Columns names were assigned with "subject" for column 1, "activity" for column 2, and features from the features.txt file assigned as names to corresponding columns
 
 The data originally consisted of 10,299 observations across 30 subjects, each with multiple observations for 6 activities. This was summarized by averaging all observations per subject and activity, reducing the number of records from 10,299 down to 180. This final data frame is 180 observations x 81 variables.
 
-# List of the 81 variables:
+## List of the 81 variables:
 
 subject: Integer between 1 and 30 which references one of 30 human subjects in the experiment that performed the activity for the observation.
 
@@ -21,6 +21,7 @@ activity: 1 of 6 possible strings to indicate activity performed by subject: {WA
 
 The remaining 79 variables are the same names as used with source data and are preceded by an integer indicated their column number in the original data:
 
+```
    1               tBodyAcc-mean()-X
    2               tBodyAcc-mean()-Y
    3               tBodyAcc-mean()-Z
@@ -100,8 +101,9 @@ The remaining 79 variables are the same names as used with source data and are p
  542     fBodyBodyGyroJerkMag-mean()
  543      fBodyBodyGyroJerkMag-std()
  552 fBodyBodyGyroJerkMag-meanFreq()
- 
-# From features_info.txt file from the source data:
+```
+
+## From features_info.txt file from the source data:
  
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -112,6 +114,7 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
+```
 tBodyAcc-XYZ
 tGravityAcc-XYZ
 tBodyAccJerk-XYZ
@@ -129,9 +132,11 @@ fBodyAccMag
 fBodyAccJerkMag
 fBodyGyroMag
 fBodyGyroJerkMag
+```
 
 The set of variables that were estimated from these signals are: 
 
+```
 mean(): Mean value
 std(): Standard deviation
 mad(): Median absolute deviation 
@@ -149,12 +154,14 @@ skewness(): skewness of the frequency domain signal
 kurtosis(): kurtosis of the frequency domain signal 
 bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 angle(): Angle between to vectors.
+```
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
+```
 gravityMean
 tBodyAccMean
 tBodyAccJerkMean
 tBodyGyroMean
 tBodyGyroJerkMean
- 
+```
