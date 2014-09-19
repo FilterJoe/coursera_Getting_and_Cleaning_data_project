@@ -12,7 +12,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 Before creating a tidy data set there are two setup steps:
 
-* Download the above data set unzip it, which will create a folder called "UCI HAR Dataset"
+* Download the above data set and unzip it, which will create a folder called "UCI HAR Dataset"
 * Place run_analysis.R in the UCI HAR Dataset folder and run it.
 
 ## Creating the Tidy Data Set
@@ -40,10 +40,10 @@ This is done in several sub steps, some of which required making some decisions 
 
 ### 4) Appropriately labels the data set with descriptive variable names
 * For mean and sd variables, relabel columns with feature name originally used by researchers, to make it easier to read but still maintaining the identical terminology to source data to make it easier for anyone who wants to go back and forth between source data and tidy data set.
-* The inserted 2 columns were named were subject and activity, as column 1 was the subject, and column 2 is the activity performed by the subject.
+* The inserted 2 columns were named subject and activity, as column 1 was the subject, and column 2 is the activity performed by the subject.
 
 ### 5) From resulting data set, create a second, independent tidy data set with the average of each variable for each activity and each subject
-* After doing this with aggregate(), the results were checked. The code for doing this is commented out.
+* After creating a tidy data of averages with aggregate(), the results were checked. The code for doing this is commented out.
 * This new table is saved to averages.txt
 * To test that this file was written correctly, it can be read with: test1 <- data <- read.table("averages.txt", header = TRUE)
 * This test was done but is commented out in the code.
